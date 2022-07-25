@@ -1,11 +1,26 @@
-# Intellij
-.idea/
+.allure
+**/allure-results
+
+.yarn/*
+
+
+#IDEA Files
+.idea/*
+!.idea/vcs.xml
+!.idea/icon.png
 *.iml
-*.iws
+*.ipr
 
-# Mac
-#.DS_Store
-
-# Maven
-log/
-target/
+logs
+.env
+*.apk
+*.ap_
+*.dex
+*.class
+**/bin/
+**/gen/
+.gradle/
+build/
+local.properties
+**/proguard/
+*.log
