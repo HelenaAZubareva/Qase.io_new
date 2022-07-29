@@ -1,7 +1,7 @@
 package Api;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 
 
 import io.restassured.response.Response;
@@ -10,7 +10,6 @@ import io.restassured.specification.RequestSpecification;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static utils.PropertyReader.getBaseUrlApi;
-
 
 
 import static io.restassured.RestAssured.given;
@@ -22,7 +21,6 @@ public class BaseApi {
     Gson gson = new GsonBuilder().
             excludeFieldsWithoutExposeAnnotation().
             create();
-
 
 
     RequestSpecification requestSpecification;
@@ -37,9 +35,9 @@ public class BaseApi {
 
     protected Response get(String uri, int statusCode) {
         return requestSpecification.
-        when().
+                when().
                 get(getBaseUrlApi() + uri).
-        then().
+                then().
                 log().all().
                 statusCode(statusCode).
                 extract().response();
@@ -50,7 +48,7 @@ public class BaseApi {
                 body(body).
                 when().
                 log().all().
-                post( getBaseUrlApi() + uri).
+                post(getBaseUrlApi() + uri).
                 then().
                 statusCode(statusCode).
                 log().all().
@@ -62,7 +60,7 @@ public class BaseApi {
                 body(body).
                 when().
                 log().all().
-                put( getBaseUrlApi()+ uri).
+                put(getBaseUrlApi() + uri).
                 then().
                 statusCode(200).
                 log().all().
@@ -89,4 +87,4 @@ public class BaseApi {
                 statusCode(statusCode).
                 extract().response();
     }
-    }
+}

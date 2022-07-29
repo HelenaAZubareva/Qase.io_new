@@ -73,6 +73,12 @@ public class PropertyReader {
         return properties.getProperty("defectApi.uri");
     }
 
+    public static String getCasesApiUri() {
+        return properties.getProperty("casesApi.uri");
+    }
+
+
+
     public static String getResultApiUri() {
         return properties.getProperty("resultApi.uri");
     }
