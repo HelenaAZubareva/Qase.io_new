@@ -1,4 +1,4 @@
-package Api.dto;
+package Api.dto.project;
 
 import com.google.gson.annotations.Expose;
 import lombok.Builder;

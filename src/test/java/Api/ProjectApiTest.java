@@ -1,21 +1,37 @@
 package Api;
 
-import Api.dto.Counts;
-import Api.dto.Project;
+import Api.dto.project.Project;
 import org.testng.annotations.Test;
+import utils.TestConstants;
 
-public class ProjectApiTest extends BaseApiTest{
-    @Test
+public class ProjectApiTest extends BaseApiTest implements TestConstants{
+    @Test (priority = 1)
     public void createProject() {
         Project project = Project.
                 builder().
-                title("NewProject").
-                code("NP2").
-                description("new").
-//                 counts(new Counts(5)).
+                title(PROJECT_TITLE).
+                code(PROJECT_CODE).
+                description(PROJECT_DESCRIPTION).
                         build();
 
         projectApi.createProject(project);
     }
+    @Test (priority = 2)
+    public void getAllProject() {
+        projectApi.getAllProject();
+    }
+
+    @Test (priority = 2)
+    public void getProjectByCode() {
+        projectApi.getProjectByCode(PROJECT_CODE);
+    }
+
+
+    @Test (priority = 3)
+    public void deleteProjectByCodeTest() {
+        projectApi.deleteProject(PROJECT_CODE);
+    }
+
+
  }
 

@@ -20,10 +20,10 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx256m
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx1024m
                     </argLine>
                     <suiteXmlFiles>
-<!--                        <suiteXmlFile>src/test/resources/login-run.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>src/test/resources/api-run.xml</suiteXmlFile>-->
                         <suiteXmlFile>src/test/resources/parallel-run.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
@@ -38,11 +38,12 @@
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
         <dependency>
-
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.9.6</version>
+            <version>1.9.9.1</version>
+<!--            <scope>runtime</scope>-->
         </dependency>
+
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>

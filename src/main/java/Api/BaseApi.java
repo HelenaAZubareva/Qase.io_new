@@ -6,8 +6,9 @@ import com.google.gson.GsonBuilder;
 
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import utils.PropertyReader;
 
+
+import static org.hamcrest.core.IsEqual.equalTo;
 import static utils.PropertyReader.getBaseUrlApi;
 
 
@@ -34,24 +35,24 @@ public class BaseApi {
                         log().all();
     }
 
-    protected Response get(String uri) {
+    protected Response get(String uri, int statusCode) {
         return requestSpecification.
-                when().
+        when().
                 get(getBaseUrlApi() + uri).
-                then().
+        then().
                 log().all().
-                statusCode(200).
+                statusCode(statusCode).
                 extract().response();
     }
 
-    protected Response post(String body, String uri) {
+    protected Response post(String body, String uri, int statusCode) {
         return requestSpecification.
                 body(body).
                 when().
                 log().all().
                 post( getBaseUrlApi() + uri).
                 then().
-                statusCode(200).
+                statusCode(statusCode).
                 log().all().
                 extract().response();
     }
@@ -68,24 +69,24 @@ public class BaseApi {
                 extract().response();
     }
 
-    protected Response patch(String body, String uri) {
+    protected Response patch(String body, String uri, int statusCode) {
         return requestSpecification.
                 body(body).
                 when().
-                log().all().
                 patch(getBaseUrlApi() + uri).
                 then().
-                statusCode(200).
                 log().all().
+                statusCode(statusCode).
                 extract().response();
     }
 
-    protected void delete(String uri) {
-        requestSpecification.
+    protected Response delete(String uri, int statusCode) {
+        return requestSpecification.
                 when().
                 delete(getBaseUrlApi() + uri).
                 then().
                 log().all().
-                statusCode(200);
+                statusCode(statusCode).
+                extract().response();
     }
-}
+    }

@@ -4,18 +4,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyReader {
-//    private static Properties properties;
-
-//    public PropertyReader() {
-//        properties = new Properties();
-//        try {
-//            properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-
         private static Properties properties;
 
         static {
@@ -70,6 +58,24 @@ public class PropertyReader {
         return properties.getProperty("baseUrlApi");
     }
 
+    public static String getProjectApiUri() {
+        return properties.getProperty("projectApi.uri");
+    }
+    public static String getAllProjectApiUri() {
+        return properties.getProperty("allProjectApiUri.uri");
+    }
+
+    public static String getRunApiUri() {
+        return properties.getProperty("runApi.uri");
+    }
+
+    public static String getDefectApiUri() {
+        return properties.getProperty("defectApi.uri");
+    }
+
+    public static String getResultApiUri() {
+        return properties.getProperty("resultApi.uri");
+    }
 
 
 }
