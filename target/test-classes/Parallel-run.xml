@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel run" parallel="tests" thread-count="3">
+    <test name="Login">
+        <classes>
+            <class name="Ui.tests.LoginTest"></class>
+        </classes>
+    </test>
+    <test name="Case">
+        <classes>
+            <class name="Ui.tests.CreateCaseTest"></class>
+        </classes>
+    </test>
+
+    <test name="Search">
+        <classes>
+            <class name="Ui.tests.SearchByProjectNameTest"></class>
+        </classes>
+    </test>
+
+    <test name="Project">
+        <classes>
+            <class name="Ui.tests.CreateNewProjectTest"></class>
+        </classes>
+    </test>
+
+    <test name="Suite">
+        <classes>
+            <class name="Ui.tests.CreateSuiteTest"></class>
+        </classes>
+    </test>
+
+    <test name="ProjectNegative">
+        <classes>
+            <class name="Ui.tests.CreateNewProjectNegativeTest"></class>
+        </classes>
+    </test>
+
+    <test name="Api">
+        <classes>
+            <class name="Api.ProjectApiTest"></class>
+        </classes>
+    </test>
+    <test name="group">
+        <groups>
+            <run>
+                <include name="Negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Ui.tests.CreateNewProjectNegativeTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -76,6 +76,9 @@ public class PropertyReader {
     public static String getCasesApiUri() {
         return properties.getProperty("casesApi.uri");
     }
+    public static String getSuitesApiUri() {
+        return properties.getProperty("suiteApi.uri");
+    }
 
 
 

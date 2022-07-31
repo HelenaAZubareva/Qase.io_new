@@ -20,18 +20,15 @@ public class ProjectApiTest extends BaseApiTest implements TestConstants{
     public void getAllProject() {
         projectApi.getAllProject();
     }
-
     @Test (priority = 2)
     public void getProjectByCode() {
         projectApi.getProjectByCode(PROJECT_CODE);
     }
 
-
     @Test (priority = 3)
     public void deleteProjectByCodeTest() {
         projectApi.deleteProject(PROJECT_CODE);
     }
-
 
  }
 
