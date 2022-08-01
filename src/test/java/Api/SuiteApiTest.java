@@ -1,25 +1,34 @@
 package Api;
 
+import Api.Steps.SuiteSteps;
 import Api.dto.Cases.ErrorResult;
-import Api.dto.Cases.Result;
 import Api.dto.Suites.Suite;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.apache.hc.core5.http.HttpStatus.SC_NOT_FOUND;
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 
 public class SuiteApiTest extends BaseApiTest {
+
+    SuiteSteps suiteSteps = new SuiteSteps();
+
     @Test
     public void CreateTestSuiteScenario() {
         String projectCode = "DEMO";
         String title = faker.name().fullName() + faker.name().title();
         Suite testSuite = Suite.builder().title(title).build();
-        int testSuiteId = suiteApi.createTestSuite(projectCode, testSuite);
+        Suite testSuiteWithDescription = Suite.builder().title(title).description(projectCode).build();
 
-        Result createdTestSuite = suiteApi.getTestSuiteById(projectCode, testSuiteId).getResult();
-        Assert.assertEquals(createdTestSuite.getTitle(), testSuite.getTitle());
+        Suite createdTestSuite = suiteSteps.createTestSuite(projectCode, testSuite);
+        int testSuiteId = createdTestSuite.getId();
 
-        ErrorResult result = suiteApi.deleteTestSuite(projectCode, 7, SC_OK);
+        suiteSteps.updateTestSuite(testSuiteWithDescription, projectCode, testSuiteId);
+
+        Suite updatedTestSuite = suiteSteps.getTestSuite(projectCode, testSuiteId);
+        Assert.assertEquals(createdTestSuite.getTitle(), updatedTestSuite.getTitle());
+        Assert.assertEquals(testSuiteWithDescription.getDescription(), updatedTestSuite.getDescription());
+
+        suiteApi.deleteTestSuite(projectCode, testSuiteId, SC_OK);
     }
+
 }

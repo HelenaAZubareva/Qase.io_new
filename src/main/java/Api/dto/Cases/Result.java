@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @Data
 public class Result {
     @Expose
-    private float id;
+    private int id;
 
     @Expose
     private String title;

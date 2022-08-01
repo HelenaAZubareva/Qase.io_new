@@ -10,5 +10,5 @@ public class GetTestSuiteResponse {
     private boolean status;
 
     @Expose
-    Result result;
+    Suite result;
 }

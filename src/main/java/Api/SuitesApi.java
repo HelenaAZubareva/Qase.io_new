@@ -26,4 +26,12 @@ public class SuitesApi extends BaseApi implements DataConstants {
         return gson.fromJson(delete(getSuitesApiUri() + projectCode + "/" + testSuiteId,
                 statusCode).body().asString(), ErrorResult.class);
     }
+
+    public int updateTestsuite(Suite testSuite, String projectCode, int testSuiteId, int statusCode) {
+
+         String body = gson.toJson(testSuite);
+         Response response = patch(body,getSuitesApiUri() + projectCode + "/" + testSuiteId,  statusCode);
+         return gson.fromJson(response.body().asString(),  ResultSuiteApi.class).getId();
+    }
+
 }
