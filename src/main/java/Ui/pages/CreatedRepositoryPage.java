@@ -16,7 +16,6 @@ public class CreatedRepositoryPage {
     public SelenideElement suiteName = $(".DvbSwG");
     public SelenideElement caseTitle = $(".jp0OXJ.nzJYNg");
 
-
     public void deleteCreatedProject() {
         settingsLink.click();
         deleteProjectButton.click();

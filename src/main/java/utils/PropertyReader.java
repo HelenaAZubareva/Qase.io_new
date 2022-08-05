@@ -14,7 +14,6 @@ public class PropertyReader {
                 e.printStackTrace();
             }
         }
-
     public static String getEmail() {
         return properties.getProperty("email");
     }
@@ -35,19 +34,18 @@ public class PropertyReader {
     public static String getLoginPageUrl() {
         return properties.getProperty("loginPage.url");
     }
-
-    public static String getHeadless() {
-        return properties.getProperty("headless");
+    public static Boolean getHeadless() {
+        return Boolean.valueOf(properties.getProperty("headless"));
     }
 
     public static String getBrowserSize() {
         return properties.getProperty("browser.size");
     }
-    public static String getTimeout() {
-        return properties.getProperty("timeout");
+    public static Long getTimeout() {
+        return Long.valueOf(properties.getProperty("timeout"));
     }
-    public static String getScreenshots() {
-        return properties.getProperty("screenshots");
+    public static Boolean getScreenshots() {
+        return Boolean.valueOf(properties.getProperty("screenshots"));
     }
 
     public  static String getToken() {
@@ -64,11 +62,9 @@ public class PropertyReader {
     public static String getAllProjectApiUri() {
         return properties.getProperty("allProjectApiUri.uri");
     }
-
     public static String getRunApiUri() {
         return properties.getProperty("runApi.uri");
     }
-
     public static String getDefectApiUri() {
         return properties.getProperty("defectApi.uri");
     }
@@ -79,12 +75,8 @@ public class PropertyReader {
     public static String getSuitesApiUri() {
         return properties.getProperty("suiteApi.uri");
     }
-
-
-
     public static String getResultApiUri() {
         return properties.getProperty("resultApi.uri");
     }
-
 
 }

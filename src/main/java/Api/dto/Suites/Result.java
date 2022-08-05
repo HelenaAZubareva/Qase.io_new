@@ -7,7 +7,6 @@ import lombok.Data;
 public class Result {
     @Expose
     private float id;
-
     @Expose
     private String title;
 }

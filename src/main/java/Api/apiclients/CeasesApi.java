@@ -1,16 +1,16 @@
-package Api;
+package Api.apiclients;
 
+import Api.base.BaseApi;
 import Api.dto.Cases.Case;
 import Api.dto.Cases.ErrorResult;
 import Api.dto.Cases.GetTestCaseResponse;
 import Api.dto.Cases.ResultApi;
 import io.restassured.response.Response;
-import utils.DataConstants;
 
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static utils.PropertyReader.getCasesApiUri;
 
-public class CeasesApi extends BaseApi implements DataConstants {
+public class CeasesApi extends BaseApi {
 
     public int createTestCase(String projectCode, Case testCase) {
 

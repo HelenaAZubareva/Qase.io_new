@@ -11,21 +11,16 @@ import utils.PropertyReader;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.webdriver;
+
 @Log4j2
 public class ProjectsPage {
-    public SelenideElement createProjectButton = $(By.id("createButton"));
-
+    public SelenideElement createProjectButton = $("#createButton");
     public SelenideElement searchField = $(".form-control.search-input");
     public SelenideElement message = $(".no-project.mt-4");
-
     public String currentUrl;
 
-
-
-
-    @Step ("Clicking  creating project button")
+    @Step("Clicking  creating project button")
     public ProjectCreationPage clickCreateProjectButton() {
-        Selenide.screenshot("by hand");
         createProjectButton.shouldBe(visible).click();
         return new ProjectCreationPage();
     }
@@ -33,7 +28,8 @@ public class ProjectsPage {
     @Step("Getting Projects Page Url")
     public String getProjectsPageUrl() {
         log.info("Navigating to  {}", PropertyReader.getProjectsPageUrl());
-        Selenide.screenshot("by hand");
-        return currentUrl= webdriver().driver().url();
+        return currentUrl = webdriver().driver().url();
     }
 }
+
+

@@ -17,8 +17,6 @@ public class LoginPage {
     public SelenideElement loginButton = $(By.id("btnLogin"));
     public SelenideElement errorMessage = $x("//div[@class='form-control-feedback']");
 
-
-
     @Step("Opening login.salesforce.com")
     public void openPage() {
         log.info("Navigate to {}", getLoginUrl());
@@ -50,3 +48,4 @@ public class LoginPage {
         return new ProjectsPage();
     }
 }
+

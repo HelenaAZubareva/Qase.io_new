@@ -15,5 +15,4 @@ public class Defect {
     String actualResult;
     @Expose
     int severity;
-
 }

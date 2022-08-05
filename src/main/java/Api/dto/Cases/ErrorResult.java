@@ -6,10 +6,8 @@ import lombok.Data;
 
 @Data
 public class ErrorResult {
-
     @Expose
     Boolean status;
-
     @Expose
     String errorMessage;
 

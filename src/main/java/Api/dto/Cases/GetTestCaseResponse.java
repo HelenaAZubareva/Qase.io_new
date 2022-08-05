@@ -7,7 +7,6 @@ import lombok.Data;
 public class GetTestCaseResponse {
     @Expose
     private boolean status;
-
     @Expose
     Result result;
 }

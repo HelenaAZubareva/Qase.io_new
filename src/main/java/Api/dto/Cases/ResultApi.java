@@ -7,7 +7,6 @@ import lombok.Data;
 public class ResultApi {
     @Expose
     int id;
-
     @Expose
     public String title;
 }

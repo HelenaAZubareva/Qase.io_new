@@ -13,7 +13,7 @@ import static utils.PropertyReader.*;
 
 public class LoginTest extends BaseTest {
     /**
-     * Checking the possibility of Successive login
+     * Checking the possibility of successive login
      */
     @Test(description = "Success login")
     public void testSuccessLogin() {
@@ -24,7 +24,6 @@ public class LoginTest extends BaseTest {
     /**
      * Checking the possibility of failing login with data
      */
-
     @Test(description = "Failed login", dataProvider = "Failed login data", dataProviderClass = ITestData.class)
     public void testFailedLogin(String email, String password) {
         loginPage.login(email, password);

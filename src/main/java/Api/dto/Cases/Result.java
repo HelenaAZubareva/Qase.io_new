@@ -9,8 +9,6 @@ import java.util.ArrayList;
 public class Result {
     @Expose
     private int id;
-
     @Expose
     private String title;
-
 }

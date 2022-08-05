@@ -1,8 +1,9 @@
+
 .allure
 **/allure-results
+.allure/
 
 .yarn/*
-
 
 #IDEA Files
 .idea/*

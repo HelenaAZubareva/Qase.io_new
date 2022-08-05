@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parallel run" parallel="tests" thread-count="3">
-    <test name="Login">
+    <test name="Api">
         <classes>
-            <class name="Ui.tests.LoginTest"></class>
+            <class name="Api.tests.ProjectApiTest"></class>
+            <class name="Api.tests.CasesApiTest"></class>
+            <class name="Api.tests.DefectApiTest"></class>
+            <class name="Api.tests.SuiteApiTest"></class>
+            <class name="Api.tests.SuiteApiTestTwo"></class>
+
         </classes>
     </test>
     <test name="Case">
@@ -12,12 +17,11 @@
         </classes>
     </test>
 
-    <test name="Search">
+    <test name="ProjectNegative">
         <classes>
-            <class name="Ui.tests.SearchByProjectNameTest"></class>
+            <class name="Ui.tests.CreateNewProjectNegativeTest"></class>
         </classes>
     </test>
-
     <test name="Project">
         <classes>
             <class name="Ui.tests.CreateNewProjectTest"></class>
@@ -30,17 +34,18 @@
         </classes>
     </test>
 
-    <test name="ProjectNegative">
+    <test name="Login">
         <classes>
-            <class name="Ui.tests.CreateNewProjectNegativeTest"></class>
+            <class name="Ui.tests.LoginTest"></class>
         </classes>
     </test>
 
-    <test name="Api">
+    <test name="Search">
         <classes>
-            <class name="Api.ProjectApiTest"></class>
+            <class name="Ui.tests.SearchByProjectNameTest"></class>
         </classes>
     </test>
+
     <test name="group">
         <groups>
             <run>
@@ -51,5 +56,4 @@
             <class name="Ui.tests.CreateNewProjectNegativeTest"/>
         </classes>
     </test>
-
 </suite>

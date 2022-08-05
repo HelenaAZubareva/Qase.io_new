@@ -9,27 +9,18 @@ import static utils.PropertyReader.getPassword;
 
 public interface ITestData {
     @DataProvider(name = "Failed login data")
-    static Object[][] inputForUpdateAddress() throws FileNotFoundException {
+    static Object[][] inputForUpdateAddress() {
 
         return new Object[][]{
                 {"",""},
                 {"  ", "  "},
                 {getEmail(), ""},
                 {getEmail(), "123"},
-                {getEmail(), "qwer"},
-                {getEmail(), "!@#$"},
-                {getEmail(), "ййцук"},
-                {getEmail(), "sql"},
-                {getEmail(), "css"},
-                {"simson@gmail.com", "qwer"},
-                {"simson@gmail.com", getPassword()},
+                {getEmail(), "  "},
                 {"", getPassword()},
+                {"  ", getPassword()},
                 {"qwer", getPassword()},
-                {"qw er", getPassword()},
-                {" qwer", getPassword()},
-                {"qwer ", getPassword()},
-                {" qwer ", getPassword()},
-                {"   ", getPassword()},
+                {"qwer", "123"},
         };
     }
 }

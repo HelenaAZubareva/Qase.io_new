@@ -10,7 +10,6 @@ import utils.PropertyReader;
 
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
 import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.Selenide.open;
 import static utils.PropertyReader.getProjectsPageUrl;
 
 @Log4j2
@@ -18,10 +17,7 @@ public class ProjectCreationPageSteps {
     private ProjectsPage projectsPage = new ProjectsPage();
     private ProjectCreationPage projectCreationPage = new ProjectCreationPage();
     private CreatedRepositoryPage createdRepositoryPage = new CreatedRepositoryPage();
-
-
     public int initialListSize;
-
 
     @Step("Creating new project")
     public void createNewProject() {
@@ -37,7 +33,6 @@ public class ProjectCreationPageSteps {
         log.info("Creating new project with name {nameProject} and  code {code}");
         projectCreationPage.createNewProject(nameProject, code);
     }
-
     @Step("Checking created project")
     public void checkCreatedProject() {
         Selenide.open(getProjectsPageUrl());

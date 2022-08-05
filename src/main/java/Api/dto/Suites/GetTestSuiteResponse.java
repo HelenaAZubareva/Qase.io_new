@@ -8,7 +8,6 @@ import lombok.Data;
 public class GetTestSuiteResponse {
     @Expose
     private boolean status;
-
     @Expose
     Suite result;
 }

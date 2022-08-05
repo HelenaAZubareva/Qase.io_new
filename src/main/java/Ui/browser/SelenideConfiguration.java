@@ -7,9 +7,6 @@ import static com.codeborne.selenide.Browsers.*;
 
 public class SelenideConfiguration {
 
-
-
-
     public static void configureBrowser(String browser) {
         setUpBasicConfigure();
 
@@ -25,11 +22,13 @@ public class SelenideConfiguration {
                 break;
         }
     }
+
     public static void setUpBasicConfigure() {
         Configuration.baseUrl = PropertyReader.getBaseUrl();
-        Configuration.headless = Boolean.parseBoolean(PropertyReader.getHeadless());
+        Configuration.headless = PropertyReader.getHeadless();
         Configuration.browserSize = PropertyReader.getBrowserSize();
-        Configuration.timeout = Long.parseLong(PropertyReader.getTimeout());
-        Configuration.screenshots = Boolean.parseBoolean(PropertyReader.getScreenshots());
+        Configuration.timeout = PropertyReader.getTimeout();
+        Configuration.screenshots = PropertyReader.getScreenshots();
     }
 }
+

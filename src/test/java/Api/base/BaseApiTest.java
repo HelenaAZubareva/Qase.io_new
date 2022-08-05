@@ -1,8 +1,11 @@
-package Api;
+package Api.base;
 
+import Api.apiclients.CeasesApi;
+import Api.apiclients.DefectApi;
+import Api.apiclients.ProjectApi;
+import Api.apiclients.SuitesApi;
 import com.github.javafaker.Faker;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 public class BaseApiTest {
     public SuitesApi suiteApi;
@@ -13,12 +16,10 @@ public class BaseApiTest {
 
     @BeforeClass
     public void setup() {
-
         suiteApi = new SuitesApi();
         projectApi = new ProjectApi();
         defectApi = new DefectApi();
         casesApi = new CeasesApi();
         faker = new Faker();
-
     }
 }

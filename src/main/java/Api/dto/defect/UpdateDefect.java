@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 @Builder
 public class UpdateDefect {
-
     @Expose
     @SerializedName("actual_result")
     String actualResult;

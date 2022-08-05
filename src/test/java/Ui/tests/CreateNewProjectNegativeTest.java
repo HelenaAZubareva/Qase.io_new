@@ -2,11 +2,11 @@ package Ui.tests;
 
 import org.testng.annotations.Test;
 import Ui.base.BaseTest;
+import utils.TestConstants;
 
 import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Selenide.open;
 
-public class CreateNewProjectNegativeTest extends BaseTest {
+public class CreateNewProjectNegativeTest extends BaseTest implements TestConstants {
 
     /**
      * Checking the possibility of creating a new project with filling in the "Project Code" field with invalid data
@@ -21,8 +21,8 @@ public class CreateNewProjectNegativeTest extends BaseTest {
     }
 
     /**
-     * Checking the possibility of creating a new project with filling in the "Project Code" field with data
-     * containing less than two characters
+     * Checking the possibility of creating a new project with filling in the "Project Code" field with data containing
+     * less than two characters
      */
     @Test (description = "Creating new project with one character code")
     public void createNewProjectWithOneCharacterCode() {
@@ -40,10 +40,7 @@ public class CreateNewProjectNegativeTest extends BaseTest {
         String code = faker.code().imei();
 
         loginPage.loginWithCorrectUser();
-        projectCreationPageSteps.createNewProjectWithData(faker.name().title(), code);
-
-        open(reader.getProjectsPageUrl());
-        projectCreationPageSteps.createNewProjectWithData(faker.name().title(), code);
+        projectCreationPageSteps.createNewProjectWithData(faker.name().title(), ACTUAL_CODE);
 
         projectCreationPage.errorMessage.shouldHave(exactText("The selected project code is already in use."));
     }

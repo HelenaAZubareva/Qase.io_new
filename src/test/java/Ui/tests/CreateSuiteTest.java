@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.exactText;
 
 public class CreateSuiteTest extends BaseTest {
     /**
-     * Checking the possibility of creating a set with filling in the fields
+     * Checking the possibility of creating a suite with filling in the fields
      */
     @Test(description = "Creating suite test", retryAnalyzer = Retry.class)
     public void createSuiteTest() {

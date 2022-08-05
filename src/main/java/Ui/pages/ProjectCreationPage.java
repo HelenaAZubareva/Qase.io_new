@@ -14,7 +14,6 @@ public class ProjectCreationPage {
 
     public SelenideElement nameProjectInput = $("#inputTitle");
     public SelenideElement codeProjectInput = $("#inputCode");
-    public SelenideElement checkboxDoNotAddMembers = $("#accessNone");
     public SelenideElement createProjectButton = $(".btn.btn-primary");
     public ElementsCollection listOfProjectNames = $$(".defect-title");
 
@@ -25,7 +24,6 @@ public class ProjectCreationPage {
     public void createNewProjectWithCorrectData() {
         nameProjectInput.sendKeys(nameProject);
         codeProjectInput.sendKeys(faker.code().asin());
-        checkboxDoNotAddMembers.click();
         createProjectButton.click();
     }
 
@@ -33,7 +31,7 @@ public class ProjectCreationPage {
         nameProjectInput.sendKeys(nameProject);
         codeProjectInput.clear();
         codeProjectInput.sendKeys(code);
-        checkboxDoNotAddMembers.click();
         createProjectButton.click();
     }
 }
+

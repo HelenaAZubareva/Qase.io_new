@@ -1,34 +1,40 @@
-package Api;
+package Api.tests;
 
+import Api.base.BaseApiTest;
 import Api.dto.project.Project;
 import org.testng.annotations.Test;
 import utils.TestConstants;
 
-public class ProjectApiTest extends BaseApiTest implements TestConstants{
-    @Test (priority = 1)
+public class ProjectApiTest extends BaseApiTest implements TestConstants {
+    /**
+     * Checking the creating of a new project through API
+     */
+    @Test(priority = 1)
     public void createProject() {
         Project project = Project.
                 builder().
                 title(PROJECT_TITLE).
                 code(PROJECT_CODE).
                 description(PROJECT_DESCRIPTION).
-                        build();
+                build();
 
         projectApi.createProject(project);
     }
-    @Test (priority = 2)
-    public void getAllProject() {
-        projectApi.getAllProject();
-    }
-    @Test (priority = 2)
+
+    /**
+     * Checking the retrieve of a specific project by code
+     */
+    @Test(priority = 2)
     public void getProjectByCode() {
         projectApi.getProjectByCode(PROJECT_CODE);
     }
 
-    @Test (priority = 3)
+    /**
+     * Checking the deleting of a specific project by code
+     */
+    @Test(priority = 3)
     public void deleteProjectByCodeTest() {
         projectApi.deleteProject(PROJECT_CODE);
     }
-
- }
+}
 

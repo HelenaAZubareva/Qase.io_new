@@ -23,7 +23,6 @@
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar -Xmx1024m
                     </argLine>
                     <suiteXmlFiles>
-<!--                        <suiteXmlFile>src/test/resources/api-run.xml</suiteXmlFile>-->
                         <suiteXmlFile>src/test/resources/parallel-run.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
@@ -110,6 +109,5 @@
             <version>1.18.24</version>
         </dependency>
     </dependencies>
-
 
 </project>
