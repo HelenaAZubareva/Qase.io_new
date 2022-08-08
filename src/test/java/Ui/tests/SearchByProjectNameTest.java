@@ -1,4 +1,5 @@
 package Ui.tests;
+import io.qameta.allure.TmsLink;
 import org.testng.annotations.Test;
 import Ui.base.BaseTest;
 import Ui.base.Retry;
@@ -12,8 +13,8 @@ public class SearchByProjectNameTest extends BaseTest {
     /**
      * Checking the ability to search for an existing project by Project name
      */
-    @Test (description = "Searching by project name test"//, retryAnalyzer = Retry.class
-    )
+    @Test (description = "Searching by project name test")
+    @TmsLink("ADP-20")
     public void searchByProjectNameTest() {
         String nameProject = faker.name().title();
 
@@ -31,6 +32,7 @@ public class SearchByProjectNameTest extends BaseTest {
      * Checking the ability to search for a non-existent project by name
      */
     @Test  (description = "Searching by project name negative test", retryAnalyzer = Retry.class)
+    @TmsLink("ADP-21")
     public void searchByProjectNameNegativeTest() {
         String nameProject = faker.name().title();
 

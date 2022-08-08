@@ -1,4 +1,5 @@
 package Ui.tests;
+import io.qameta.allure.TmsLink;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ public class CreateCaseTest extends BaseTest {
      * Checking the possibility of creating a test Case with filling in fields and selecting values from drop-downs
      */
     @Test (description = "Creating case test")
+    @TmsLink("ADP-11")
     public void createCaseTest() {
         String caseTitle = faker.name().title();
 

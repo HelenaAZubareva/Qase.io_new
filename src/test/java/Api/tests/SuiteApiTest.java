@@ -3,6 +3,7 @@ package Api.tests;
 import Api.Steps.SuiteSteps;
 import Api.base.BaseApiTest;
 import Api.dto.Suites.Suite;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,6 +18,7 @@ public class SuiteApiTest extends BaseApiTest {
      * Scenario for creating, updating and deleting of a specific suite for a specific project
      */
     @Test
+    @TmsLink("ADP-9")
     public void CreateTestSuiteScenario() {
         //variables
         String title = faker.name().fullName() + faker.name().title();

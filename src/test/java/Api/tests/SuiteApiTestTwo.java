@@ -2,6 +2,7 @@ package Api.tests;
 
 import Api.base.BaseApiTest;
 import Api.dto.Suites.Suite;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -26,6 +27,7 @@ public class SuiteApiTestTwo extends BaseApiTest {
      * Scenario two for creating, updating and deleting of a specific suite for a specific project
      */
     @Test
+    @TmsLink("ADP-22")
     public void CreateTestSuiteScenarioTwo() {
 
         //update

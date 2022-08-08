@@ -1,6 +1,7 @@
 package Ui.tests;
 
 import Ui.base.Retry;
+import io.qameta.allure.TmsLink;
 import org.testng.annotations.Test;
 import Ui.base.BaseTest;
 
@@ -11,6 +12,7 @@ public class CreateSuiteTest extends BaseTest {
      * Checking the possibility of creating a suite with filling in the fields
      */
     @Test(description = "Creating suite test", retryAnalyzer = Retry.class)
+    @TmsLink("ADP-16")
     public void createSuiteTest() {
         String suiteName = faker.name().title();
 

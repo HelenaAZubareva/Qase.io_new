@@ -2,6 +2,7 @@ package Api.apiclients;
 
 import Api.base.BaseApi;
 import Api.dto.defect.Defect;
+import Api.dto.defect.Status;
 import Api.dto.defect.UpdateDefect;
 
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
@@ -12,9 +13,9 @@ public class DefectApi extends BaseApi {
         post(gson.toJson(defect), getDefectApiUri() + code, SC_OK);
     }
 
-    public Defect getSpecificDefect(String code, String id) {
-        return gson.fromJson(get(getDefectApiUri() + code + id, SC_OK).
-                asString(), Defect.class);
+    public Status getSpecificDefect(String code, int id) {
+        return gson.fromJson(get(getDefectApiUri() + code +"/"+ id, SC_OK).body().
+                asString(), Status.class);
     }
 
     public Defect getAllDefectTest(String code) {
@@ -22,7 +23,7 @@ public class DefectApi extends BaseApi {
                 asString(), Defect.class);
     }
 
-    public void updateDefect(UpdateDefect updateDefect, String code, String id) {
-        patch(gson.toJson(updateDefect), getDefectApiUri() + code + id, SC_OK);
+    public void updateDefect(UpdateDefect updateDefect, String code, int id) {
+        patch(gson.toJson(updateDefect), getDefectApiUri() + code +"/"+ id, SC_OK);
     }
 }

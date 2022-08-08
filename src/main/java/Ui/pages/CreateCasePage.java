@@ -1,4 +1,5 @@
 package Ui.pages;
+
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import Ui.wrappers.DropDownCreateCase;
@@ -11,10 +12,9 @@ public class CreateCasePage {
 
     public SelenideElement saveButton = $("#save-case");
 
-
     @Step("Creating a new case")
     public CreateCasePage createCase(String title, String description, String preconditions,
-                                     String status, String severity,  String type) {
+                                     String status, String severity, String type) {
         new InputCreateCase("Title").writeCase(title);
         new InputCreateCase("Description").writeCase(description);
         new InputCreateCase("Pre-conditions").writeCase(preconditions);
@@ -24,3 +24,4 @@ public class CreateCasePage {
         return this;
     }
 }
+

@@ -27,12 +27,11 @@
 ***
 
 1. ***Case creation test***
-- Checking the possibility of creating a test case with filling in fields and selecting values from drop-downs [link](https://app.qase.io/case/ADP-10).
+- Checking the possibility of creating a test case with filling in fields and selecting values from drop-downs [link](https://app.qase.io/case/ADP-11).
 
 2. ***Tests for creating a new project (negative)***
-- Checking the possibility of creating a new project with filling in the "Project Code" field with invalid data [link](https://app.qase.io/case/ADP-11);
-- Checking the possibility of creating a new project with filling in the "Project Code" field with data 
-containing less than two characters [link](https://app.qase.io/case/ADP-12);
+- Checking the possibility of creating a new project with filling in the "Project Code" field with invalid data [link](https://app.qase.io/case/ADP-23);
+- Checking the possibility of creating a new project with filling in the "Project Code" field with data containing less than two characters [link](https://app.qase.io/case/ADP-12);
 - Checking the possibility of creating a new project by filling in the "Project Code" field with an existing code [link](https://app.qase.io/case/ADP-13).
 
 3. ***Creating new project tests***

@@ -22,7 +22,6 @@ public class ProjectCreationPageSteps {
     @Step("Creating new project")
     public void createNewProject() {
         initialListSize = projectCreationPage.listOfProjectNames.size();
-
         projectsPage.clickCreateProjectButton();
         projectCreationPage.createNewProjectWithCorrectData();
     }

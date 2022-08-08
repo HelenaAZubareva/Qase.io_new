@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
+import utils.AllureUtils;
 import utils.PropertyReader;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -17,11 +18,11 @@ public class LoginPage {
     public SelenideElement loginButton = $(By.id("btnLogin"));
     public SelenideElement errorMessage = $x("//div[@class='form-control-feedback']");
 
-    @Step("Opening login.salesforce.com")
-    public void openPage() {
-        log.info("Navigate to {}", getLoginUrl());
-        Selenide.open(getLoginUrl());
-    }
+//    @Step("Opening login.salesforce.com")
+//    public void openPage() {
+//        log.info("Navigate to {}", getLoginUrl());
+//        Selenide.open(getLoginUrl());
+//    }
 
     @Step("Logging with correct User")
     public ProjectsPage loginWithCorrectUser() {
@@ -32,6 +33,7 @@ public class LoginPage {
         log.info("Logging with password {}", getPassword());
         passwordInput.sendKeys(getPassword());
         loginButton.click();
+        AllureUtils.screenshot();
         return new ProjectsPage();
     }
 
@@ -44,6 +46,7 @@ public class LoginPage {
         log.info("Logging with password {password}");
         passwordInput.sendKeys(password);
         loginButton.click();
+        AllureUtils.screenshot();
         log.info("Clicking login button");
         return new ProjectsPage();
     }

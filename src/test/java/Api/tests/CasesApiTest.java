@@ -4,6 +4,7 @@ import Api.base.BaseApiTest;
 import Api.dto.Cases.Case;
 import Api.dto.Cases.ErrorResult;
 import Api.dto.Cases.Result;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,6 +17,7 @@ public class CasesApiTest extends BaseApiTest {
      * Scenario for creating, retrieving and deleting of a specific case for a specific project
      */
     @Test
+    @TmsLink("ADP-1")
     public void CreateTestCaseScenario() {
         String title = faker.name().fullName() + faker.book().title();
         Case testCase = Case.builder().title(title).build();
