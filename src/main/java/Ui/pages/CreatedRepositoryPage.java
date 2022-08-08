@@ -12,8 +12,7 @@ import static utils.PropertyReader.getProjectsPageUrl;
 
 @Log4j2
 public class CreatedRepositoryPage {
-    public SelenideElement settingsLink =  $x("//a[@title='Settings']");
-
+    public SelenideElement settingsLink =  $("[title='Settings']");
     public SelenideElement deleteProjectButton = $(".btn.btn-cancel");
     public SelenideElement suiteButton = $("#create-suite-button");
     public SelenideElement caseButton = $("#create-case-button");
